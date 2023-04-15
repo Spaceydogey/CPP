@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:26:52 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/14 18:42:04 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/15 19:13:26 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 # define PHONEBOOK_HPP
 # include "Contact.hpp"
 
+# define MAX_SIZE 8
+
 class PhoneBook
 {
 	private:
-		Contact contacts[9];
+		Contact _contacts[MAX_SIZE];
 
 	public:
-		PhoneBook();
-		~PhoneBook();
+		PhoneBook(void);
+		~PhoneBook(void);
+		void	add(std::string lst[5], int size);
+		Contact	get_contact(int index);
 };
 
 #endif
