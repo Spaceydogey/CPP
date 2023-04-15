@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:42:20 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/15 19:12:33 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/15 19:27:32 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ void	Contact::set_contact(std::string first, std::string last, std::string nick,
 	this->_darkest_secret = secret;
 	this->_create_display();
 	this->_create_listing();
-	std::cout << this->_last_name + " " + this->_first_name
-					+ " created" << std::endl;
 	return ;
 }
 

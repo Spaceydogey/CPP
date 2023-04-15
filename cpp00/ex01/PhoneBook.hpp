@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 18:26:52 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/15 19:13:26 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/15 19:25:38 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ class PhoneBook
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		void	add(std::string lst[5], int size);
+		void	add(int size);
+		void	search(int size);
 		Contact	get_contact(int index);
 };
 
