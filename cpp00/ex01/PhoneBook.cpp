@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 11:03:30 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/15 19:26:43 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/16 12:10:35 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void	PhoneBook::search(int size)
 	int			index;
 
 	i = -1;
+	if (size == 0)
+		return ;
 	while (++i < size)
 	std::cout << format_index() << i << this->_contacts[i].get_listing() << std::endl;
 	std::cout << ">Enter the contact's index :" << std::endl;
