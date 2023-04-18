@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 17:28:59 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/18 17:39:21 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/18 17:42:45 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	HumanB::attack(void) const
 		std::cout << this->_name << " attacks with their " << this->_weapon->getType()
 				<< std::endl;
 	else
-		std::cout << this->_name << " attacks with their fist" << std::endl;	
+		std::cout << this->_name << " attacks with their fists" << std::endl;	
 }
 
 void	HumanB::setWeapon(Weapon &weapon)
