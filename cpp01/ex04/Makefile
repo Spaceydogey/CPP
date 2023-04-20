@@ -1,7 +1,6 @@
-
-NAME = 
+NAME = sed_is_for_losers
  
-SRCS = 
+SRCS = main.cpp
 	   
 OBJ = $(SRCS:.cpp=.o)
 
