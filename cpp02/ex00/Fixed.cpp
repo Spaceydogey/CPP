@@ -6,14 +6,14 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 11:09:15 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/21 14:12:06 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/21 16:19:48 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-const int Fixed::_nbrBit = 8;
+int const Fixed::_nbrBit = 8;
 
 
 Fixed::Fixed() : _value(0)

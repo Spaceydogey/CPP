@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 10:16:42 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/21 14:07:40 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/21 16:19:34 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class Fixed
 {
 private:
 	int					_value;
-	static const int	_nbrBit;
+	static int const	_nbrBit;
 
 public:
 	Fixed(void);
