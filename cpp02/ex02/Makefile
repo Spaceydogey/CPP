@@ -1,7 +1,7 @@
 
-NAME = 
+NAME = ex02
  
-SRCS = 
+SRCS = main.cpp Fixed.cpp
 	   
 OBJ = $(SRCS:.cpp=.o)
 
