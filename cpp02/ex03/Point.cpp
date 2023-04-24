@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 22:29:50 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/24 22:42:54 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/24 22:54:44 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Point::Point(void) : _x(0), _y(0)
     return ;
 }
 
-Point::Point(float x, float y) : _x(x), _y(y)
+Point::Point(float const x, float const y) : _x(x), _y(y)
 {
     return ;
 }
