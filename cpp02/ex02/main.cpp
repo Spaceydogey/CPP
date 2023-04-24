@@ -17,7 +17,11 @@
 int main( void ) {
     Fixed a;
     Fixed j(1);
-    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+    Fixed const b( Fixed( 5.05f ) * Fixed( 2.5f ) );
+    Fixed c(1);
+    Fixed d(1);
+    Fixed e(2);
+    Fixed const g( Fixed( 20 ) / Fixed( 2.5f ) );
     
     std::cout << a + j - j << std::endl;
     std::cout << ++a << std::endl;
@@ -25,19 +29,17 @@ int main( void ) {
     std::cout << a++ << std::endl;
     std::cout << a << std::endl;
     std::cout << b << std::endl;
+    std::cout << g << std::endl;
     // std::cout << Fixed::max( a, b ) << std::endl;
 
-    // Fixed c(1);
-    // Fixed d(1);
-    // Fixed e(2);
 
-    // std::cout << (c == d) << std::endl; // 1
-    // std::cout <<  (c != d) << std::endl; // 0
-    // std::cout <<  (e != d) << std::endl; // 1
-    // std::cout <<  (e < d )<< std::endl; // 0
-    // std::cout <<  (c <= d) << std::endl; // 1
-    // std::cout <<  (c >= d) << std::endl; // 1
-    // std::cout <<  (c > e )<< std::endl; // 0
+    std::cout << (c == d) << std::endl; // 1
+    std::cout <<  (c != d) << std::endl; // 0
+    std::cout <<  (e != d) << std::endl; // 1
+    std::cout <<  (e < d )<< std::endl; // 0
+    std::cout <<  (c <= d) << std::endl; // 1
+    std::cout <<  (c >= d) << std::endl; // 1
+    std::cout <<  (c > e )<< std::endl; // 0
 
     return 0;
 }

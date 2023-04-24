@@ -37,7 +37,7 @@ class Fixed
 		Fixed 			& operator=(Fixed const &rhs);
 		Fixed 			operator+(Fixed const &rhs);
 		Fixed 			operator-(Fixed const &rhs);
-		// Fixed 			& operator/(Fixed const &rhs);
+		Fixed 			operator/(Fixed const &rhs);
 		Fixed 			operator*(Fixed const &rhs);
 //Increment operators
 		Fixed 			operator++(int);
