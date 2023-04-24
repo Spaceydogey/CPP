@@ -1,7 +1,7 @@
 
-NAME = 
+NAME = bsp
  
-SRCS = 
+SRCS = main.cpp Fixed.cpp bsp.cpp
 	   
 OBJ = $(SRCS:.cpp=.o)
 
