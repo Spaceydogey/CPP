@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 11:09:15 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/21 16:19:48 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/24 15:54:55 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,71 @@ Fixed::Fixed(Fixed const &to_cp)
 	*this = to_cp;
 }
 
+// Comparison operators
+bool 	Fixed::operator==(Fixed const &rhs)
+{
+	return (this->_value == rhs.getRawBits());
+}
+
+bool 	Fixed::operator<(Fixed const &rhs)
+{
+	return (this->_value < rhs.getRawBits());
+}
+
+bool 	Fixed::operator<=(Fixed const &rhs)
+{
+	return (*this < rhs || *this == rhs);
+}
+
+bool 	Fixed::operator!=(Fixed const &rhs)
+{
+	return (!(*this == rhs));
+}
+
+bool 	Fixed::operator>(Fixed const &rhs)
+{
+	return (!(*this <= rhs));
+}
+
+bool 	Fixed::operator>=(Fixed const &rhs)
+{
+	return (!(*this < rhs));
+}
+
+// Arithmetic operators
 Fixed 	& Fixed::operator=(Fixed const &rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->_value = rhs.getRawBits();
 	return (*this);
 }
+
+Fixed	Fixed::operator+(Fixed const &rhs)
+{
+	Fixed	res;
+
+	res.setRawBits((this->_value + rhs.getRawBits()));
+	return (res);
+}
+
+Fixed	Fixed::operator-(Fixed const &rhs)
+{
+	Fixed	res;
+	
+	res.setRawBits((this->_value - rhs.getRawBits()));
+	return (res);
+}
+
+//Increment operators
+Fixed 			Fixed::operator++(int);
+{	
+	tmp = 
+	this->_value += 1;
+}
+		Fixed 			operator--(int);
+		Fixed 			& operator++(void);
+		Fixed 			& operator--(void);
+
 
 int	Fixed::getRawBits(void) const
 {

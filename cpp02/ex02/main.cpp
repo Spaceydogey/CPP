@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 14:03:48 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/21 14:07:34 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/24 11:55:57 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,30 @@
 #include "Fixed.hpp"
 
 
-int main( void ) 
-{
+int main( void ) {
     Fixed a;
-    Fixed const b( 10 );
-    Fixed const c( -42.42f );
-    Fixed const d( b );
+    Fixed j(1);
+    // Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
     
-    a = Fixed( 1234.4321f );
-    std::cout << "a is " << a << std::endl;
-    std::cout << "b is " << b << std::endl;
-    std::cout << "c is " << c << std::endl;
-    std::cout << "d is " << d << std::endl;
-    std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-    std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-    std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-    std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+    std::cout << a + j - j << std::endl;
+    // std::cout << ++a << std::endl;
+    // std::cout << a << std::endl;
+    // std::cout << a++ << std::endl;
+    // std::cout << a << std::endl;
+    // std::cout << b << std::endl;
+    // std::cout << Fixed::max( a, b ) << std::endl;
+
+    // Fixed c(1);
+    // Fixed d(1);
+    // Fixed e(2);
+
+    // std::cout << (c == d) << std::endl; // 1
+    // std::cout <<  (c != d) << std::endl; // 0
+    // std::cout <<  (e != d) << std::endl; // 1
+    // std::cout <<  (e < d )<< std::endl; // 0
+    // std::cout <<  (c <= d) << std::endl; // 1
+    // std::cout <<  (c >= d) << std::endl; // 1
+    // std::cout <<  (c > e )<< std::endl; // 0
+
     return 0;
 }
