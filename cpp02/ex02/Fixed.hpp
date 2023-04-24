@@ -19,7 +19,6 @@ class Fixed
 	private:
 		int					_value;
 		static int const	_binPointPos;
-;
 
 	public:
 		Fixed(void);
@@ -39,7 +38,7 @@ class Fixed
 		Fixed 			operator+(Fixed const &rhs);
 		Fixed 			operator-(Fixed const &rhs);
 		// Fixed 			& operator/(Fixed const &rhs);
-		// Fixed 			& operator*(Fixed const &rhs);
+		Fixed 			operator*(Fixed const &rhs);
 //Increment operators
 		Fixed 			operator++(int);
 		Fixed 			operator--(int);
