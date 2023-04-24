@@ -46,32 +46,32 @@ Fixed::Fixed(Fixed const &to_cp)
 }
 
 // Comparison operators
-bool 	Fixed::operator==(Fixed const &rhs)
+bool 	Fixed::operator==(Fixed const &rhs) const
 {
 	return (this->_value == rhs.getRawBits());
 }
 
-bool 	Fixed::operator<(Fixed const &rhs)
+bool 	Fixed::operator<(Fixed const &rhs) const
 {
 	return (this->_value < rhs.getRawBits());
 }
 
-bool 	Fixed::operator<=(Fixed const &rhs)
+bool 	Fixed::operator<=(Fixed const &rhs) const
 {
 	return (*this < rhs || *this == rhs);
 }
 
-bool 	Fixed::operator!=(Fixed const &rhs)
+bool 	Fixed::operator!=(Fixed const &rhs) const
 {
 	return (!(*this == rhs));
 }
 
-bool 	Fixed::operator>(Fixed const &rhs)
+bool 	Fixed::operator>(Fixed const &rhs) const
 {
 	return (!(*this <= rhs));
 }
 
-bool 	Fixed::operator>=(Fixed const &rhs)
+bool 	Fixed::operator>=(Fixed const &rhs) const
 {
 	return (!(*this < rhs));
 }
@@ -117,9 +117,6 @@ Fixed	Fixed::operator/(Fixed const &rhs)
 	res._value = res._value << (Fixed::_binPointPos);
 	return (res);
 }
-
-
-
 
 //Increment operators
 Fixed	Fixed::operator++(int)
@@ -184,4 +181,32 @@ std::ostream	&  operator<<(std::ostream &o, Fixed const &rhs)
 int  Fixed::getbinPointPos(void)
 {
 	return (Fixed::_binPointPos);
+}
+
+Fixed	&Fixed::max(Fixed &lhs, Fixed &rhs)
+{
+	if (lhs >= rhs)
+		return (lhs);
+	return (rhs);
+}
+
+Fixed	&Fixed::min(Fixed &lhs, Fixed &rhs)
+{
+	if (lhs <= rhs)
+		return (lhs);
+	return (rhs);
+}
+
+Fixed const	&Fixed::max(Fixed const &lhs, Fixed const &rhs)
+{
+	if (lhs >= rhs)
+		return (lhs);
+	return (rhs);
+}
+
+Fixed const	&Fixed::min(Fixed const &lhs, Fixed const &rhs)
+{
+	if (lhs <= rhs)
+		return (lhs);
+	return (rhs);
 }
