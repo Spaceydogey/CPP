@@ -22,15 +22,28 @@ Point::Point(float const x, float const y) : _x(x), _y(y)
     return ;
 }
 
-Point::Point(Point const &to_cp)
+Point::Point(Point const &to_cp) : _x(to_cp.getX()), _y(to_cp.getY())
 {
-    *this = to_cp;
     return ;
 }
 
 Point   &Point::operator=(Point const &rhs)
 {
-    this->_x = rhs.x;
-    this->_y = rhs.y;
+    (void)rhs;
     return (*this);
+}
+
+Fixed   Point::getX(void) const
+{
+    return (this->_x);
+}
+
+Fixed   Point::getY(void) const
+{
+    return (this->_y);
+}
+
+Point::~Point(void)
+{
+    return ;
 }

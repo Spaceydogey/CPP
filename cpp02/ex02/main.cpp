@@ -21,7 +21,7 @@ int main( void ) {
     Fixed c(1);
     Fixed d(1);
     Fixed e(2);
-    Fixed const g( Fixed( 20 ) / Fixed( 2.5f ) );
+    Fixed const g( Fixed( 1.5f ) / Fixed( 2 ) );
     
     std::cout << a + j - j << std::endl;
     std::cout << ++a << std::endl;

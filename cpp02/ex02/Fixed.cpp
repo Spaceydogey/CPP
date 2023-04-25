@@ -113,8 +113,8 @@ Fixed	Fixed::operator/(Fixed const &rhs)
 {
 	Fixed	res;
 
-	res._value = this->_value / rhs._value;
-	res._value = res._value << (Fixed::_binPointPos);
+	res._value = this->_value << (Fixed::_binPointPos);
+	res._value = res._value / rhs._value;
 	return (res);
 }
 

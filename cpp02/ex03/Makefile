@@ -1,7 +1,7 @@
 
 NAME = bsp
  
-SRCS = main.cpp Fixed.cpp bsp.cpp
+SRCS = main.cpp Fixed.cpp bsp.cpp Point.cpp
 	   
 OBJ = $(SRCS:.cpp=.o)
 
