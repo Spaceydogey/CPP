@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:07:01 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/25 18:35:33 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/25 18:34:30 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class ClapTrap
 		unsigned int	getAd(void) const;
 		std::string		getName(void) const;
 		
-	private:
+	protected:
 		//Atrbutes
 		std::string		_name;
 		unsigned int	_hp;
