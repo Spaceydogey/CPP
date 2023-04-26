@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:35:57 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 16:35:37 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/26 15:03:28 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
 # include <iostream>
 # include <string>
 
-class FragTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
 		// Constructors
-		FragTrap();
-		FragTrap(std::string name);
-		FragTrap(const FragTrap &copy);
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &copy);
 		
 		// Destructor
-		~FragTrap();
+		~ScavTrap();
 		
 		// Operators
-		FragTrap & operator=(const FragTrap &assign);
+		ScavTrap & operator=(const ScavTrap &assign);
 		
 		//member function
-		void 	highFivesGuys(void) const;		
+		void	attack(const std::string& target) const;
+		void	guardGate(void) const;		
 		
 	private:
 		

@@ -1,54 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:35:59 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 16:35:32 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/25 20:38:10 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
 // Constructors
-FragTrap::FragTrap() : ClapTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	this->_hp = 100;
-	this->_ep = 100;
-	this->_ad = 30;
+	this->_ep = 50;
+	this->_ad = 20;
 	std::cout << "\e[0;33mDefault Constructor called of " << this->_name
-				<< " the FragTrap\e[0m" << std::endl;
+				<< " the ScavTrap\e[0m" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->_hp = 100;
-	this->_ep = 100;
-	this->_ad = 30;
+	this->_ep = 50;
+	this->_ad = 20;
 	std::cout << "\e[0;33mString Constructor called of " << this->_name
-				<< " the FragTrap\e[0m" << std::endl;
+				<< " the ScavTrap\e[0m" << std::endl;
 }
-FragTrap::FragTrap(const FragTrap &copy)
+ScavTrap::ScavTrap(const ScavTrap &copy)
 {
 	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of " << this->_name
-				<< " the FragTrap\e[0m" << std::endl;
+				<< " the ScavTrap\e[0m" << std::endl;
 }
 
 
 // Destructor
-FragTrap::~FragTrap() 
+ScavTrap::~ScavTrap() 
 {
 	std::cout << "\e[0;31mDestructor called of " << this->_name
-				<< " the FragTrap\e[0m" << std::endl;
+				<< " the ScavTrap\e[0m" << std::endl;
 }
 
 
 // Operators
-FragTrap & FragTrap::operator=(const FragTrap &assign)
+ScavTrap & ScavTrap::operator=(const ScavTrap &assign)
 {
 	
 	this->_name = assign.getName();
@@ -59,7 +59,14 @@ FragTrap & FragTrap::operator=(const FragTrap &assign)
 }
 
 //Member function
-void	FragTrap::highFivesGuys(void) const
+void	ScavTrap::attack(const std::string &target) const
 {
-	std::cout << this->_name << " HIGH FIVE! " << std::endl;
+	std::cout << "\e[1;35m"<< this->_name << " the Scav attacks " 
+				<< target << ", causing " << this->_ad
+				<< " points of damage!\e[0m"<< std::endl;
+}
+
+void	ScavTrap::guardGate(void) const
+{
+	std::cout << this->_name << " entered in Gate Keeper mode " << std::endl;
 }
