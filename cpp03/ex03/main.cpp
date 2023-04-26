@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:49:22 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 16:44:06 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/26 19:08:36 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,17 @@ int main(void)
     std::cout << std::endl;
     DiamondTrap di("beep");
     std::cout << std::endl;
+    std::cout << "Ad = " << di.getAd() << std::endl;
+    std::cout << "Hp = " << di.getHp() << std::endl;
+    std::cout << "Ep = " << di.getEp() << std::endl;
+    std::cout << std::endl;
     std::cout << "\e[0;32mTesting di attack\e[0m" << std::endl;
+    std::cout << std::endl;
     di.attack("an innocent looking sheep");
     std::cout << std::endl;
     std::cout << "\e[0;32mTesting di takeDamage\e[0m" << std::endl;
+
+    std::cout << std::endl;
     di.takeDamage(0);
     di.takeDamage(1);
     di.takeDamage(5);
@@ -117,9 +124,11 @@ int main(void)
     di.beRepaired(4294967295);
     di.beRepaired(-2);
     di.beRepaired(0);
+    std::cout << std::endl;
+    di.whoAmI();
+    std::cout << std::endl;
     std::cout << "Ad = " << di.getAd() << std::endl;
     std::cout << "Hp = " << di.getHp() << std::endl;
     std::cout << "Ep = " << di.getEp() << std::endl;
-    std::cout << "Name = " << di.getName() << std::endl;
     std::cout << std::endl;
 }

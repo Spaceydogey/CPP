@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:50:39 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 16:34:00 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/26 19:07:17 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,13 @@ class DiamondTrap : public FragTrap, ScavTrap
 		DiamondTrap( DiamondTrap const & to_cp );
 		~DiamondTrap();
 		DiamondTrap &			operator=( DiamondTrap const & rhs );
-		// void					attack(const std::string& target) const;
 		using ScavTrap::attack;
-		virtual std::string		getName(void) const;
+		void			whoAmI(void) const;
 
 
 	private:
 		std::string	_name;
 		
-
 };
 
 std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i );
