@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:49:22 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/25 18:27:40 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/27 09:15:45 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,19 @@ int main(void)
         std::cout << "\e[0;32mTesting Clap attack\e[0m" << std::endl;
         Clap.attack("an innocent looking sheep");
         std::cout << std::endl;
+        std::cout << "\e[0;32mTesting Clap beRepaired\e[0m" << std::endl;
+        Clap.beRepaired(0);
+        Clap.beRepaired(1);
+        Clap.beRepaired(5);
+        Clap.beRepaired(4294967295);
+        Clap.beRepaired(-2);
+        Clap.beRepaired(0);
+        Clap.beRepaired(0);
+        Clap.beRepaired(0);
+        Clap.beRepaired(0);
+        Clap.beRepaired(0);
+        Clap.beRepaired(0);
+        std::cout << std::endl;
         std::cout << "\e[0;32mTesting Clap takeDamage\e[0m" << std::endl;
         Clap.takeDamage(0);
         Clap.takeDamage(1);
@@ -30,24 +43,8 @@ int main(void)
         Clap.takeDamage(4294967295);
         Clap.takeDamage(0);
         std::cout << std::endl;
-        std::cout << "\e[0;32mTesting Clap beRepaired\e[0m" << std::endl;
-        Clap.beRepaired(0);
-        Clap.beRepaired(1);
-        Clap.beRepaired(5);
-        Clap.beRepaired(4294967295);
-        Clap.beRepaired(-2);
-        Clap.beRepaired(0);
-        std::cout << std::endl;
         std::cout << "\e[0;32mTesting Scav attack\e[0m" << std::endl;
         Scav.attack("a cute looking otter");
-        std::cout << std::endl;
-        std::cout << "\e[0;32mTesting Scav takeDamage\e[0m" << std::endl;
-        Scav.takeDamage(0);
-        Scav.takeDamage(1);
-        Scav.takeDamage(5);
-        Scav.takeDamage(2000);
-        Scav.takeDamage(4294967295);
-        Scav.takeDamage(0);
         std::cout << std::endl;
         std::cout << "\e[0;32mTesting Scav beRepaired\e[0m" << std::endl;
         Scav.beRepaired(0);
@@ -59,6 +56,14 @@ int main(void)
         std::cout << std::endl;
         std::cout << "\e[0;32mTesting Scav guardGate\e[0m" << std::endl;
         Scav.guardGate();
+        std::cout << std::endl;
+        std::cout << "\e[0;32mTesting Scav takeDamage\e[0m" << std::endl;
+        Scav.takeDamage(0);
+        Scav.takeDamage(1);
+        Scav.takeDamage(5);
+        Scav.takeDamage(2000);
+        Scav.takeDamage(4294967295);
+        Scav.takeDamage(0);
         std::cout << std::endl;
     }
     std::cout << std::endl;

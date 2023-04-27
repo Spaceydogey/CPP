@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:35:57 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 15:03:28 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/27 09:23:08 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class ScavTrap : virtual public ClapTrap
 		ScavTrap & operator=(const ScavTrap &assign);
 		
 		//member function
-		void	attack(const std::string& target) const;
-		void	guardGate(void) const;		
+		void	attack(const std::string& target);
+		void	guardGate(void);		
 		
 	private:
 		

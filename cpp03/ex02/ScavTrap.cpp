@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:35:59 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 14:54:06 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/27 09:12:19 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,26 @@ ScavTrap & ScavTrap::operator=(const ScavTrap &assign)
 }
 
 //Member function
-void	ScavTrap::attack(const std::string &target) const
+void	ScavTrap::attack(const std::string &target)
 {
+	if (this->_ep == 0 || this->_hp == 0)
+	{
+		std::cout << this->_name << " the Scav has no more hp or energy " << std::endl;
+		return ;
+	}
+	this->_ep -= 1;
 	std::cout << "\e[1;35m"<< this->_name << " the Scav attacks " 
 				<< target << ", causing " << this->_ad
 				<< " points of damage!\e[0m"<< std::endl;
 }
 
-void	ScavTrap::guardGate(void) const
+void	ScavTrap::guardGate(void)
 {
+	if (this->_ep == 0 || this->_hp == 0)
+	{
+		std::cout << this->_name << " the Scav has no more hp or energy " << std::endl;
+		return ;
+	}
+	this->_ep -= 1;
 	std::cout << this->_name << " entered in Gate Keeper mode " << std::endl;
 }

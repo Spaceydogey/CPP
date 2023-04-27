@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:50:41 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 19:36:01 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/27 09:26:06 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ DiamondTrap::DiamondTrap() : _name("default")
 
 DiamondTrap::DiamondTrap( const DiamondTrap & to_cp )
 {
-	*this = copy;
+	*this = to_cp;
 	std::cout << "\e[0;33mCopy Constructor called of " << this->_name
 				<< " the DiamondTrap\e[0m" << std::endl;
 }
@@ -53,15 +53,21 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
 {
-	this->_name = assign.getName();
-	this->_hp = assign.getHp();
-	this->_ep = assign.getEp();
-	this->_ad = assign.getAd();
+	this->_name = rhs.getName();
+	this->_hp = rhs.getHp();
+	this->_ep = rhs.getEp();
+	this->_ad = rhs.getAd();
 	return *this;
 }
 
-void	DiamondTrap::whoAmI(void) const
+void	DiamondTrap::whoAmI(void)
 {
+	if (this->_ep == 0 || this->_hp == 0)
+	{
+		std::cout << this->_name << " the Diamond has no more hp or energy " << std::endl;
+		return ;
+	}
+	this->_ep -= 1;
 	std::cout << "Diamond name : " << this->_name 
 				<< " Clap trap name : " << this->getName() << std::endl;
 }

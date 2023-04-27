@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:07:01 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/25 18:34:30 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/27 09:17:33 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class ClapTrap
 		ClapTrap & operator=(const ClapTrap &assign);
 
 		//member function
-		virtual void	attack(const std::string& target) const;
+		virtual void	attack(const std::string& target);
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 		unsigned int	getHp(void) const;

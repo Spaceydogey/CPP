@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 14:50:39 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 19:07:17 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/27 09:23:30 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class DiamondTrap : public FragTrap, ScavTrap
 		~DiamondTrap();
 		DiamondTrap &			operator=( DiamondTrap const & rhs );
 		using ScavTrap::attack;
-		void			whoAmI(void) const;
+		void			whoAmI(void);
 
 
 	private:

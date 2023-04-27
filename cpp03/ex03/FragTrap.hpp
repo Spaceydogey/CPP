@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:35:57 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 16:34:50 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/27 09:23:01 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class FragTrap : virtual public ClapTrap
 		FragTrap & operator=(const FragTrap &assign);
 		
 		//member function
-		void 			highFivesGuys(void) const;		
+		void 	highFivesGuys(void);		
 		
 	private:
 		

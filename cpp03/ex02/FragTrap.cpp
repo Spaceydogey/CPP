@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:35:59 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 16:35:32 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/27 09:20:56 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,13 @@ FragTrap & FragTrap::operator=(const FragTrap &assign)
 }
 
 //Member function
-void	FragTrap::highFivesGuys(void) const
+void	FragTrap::highFivesGuys(void)
 {
+	if (this->_ep == 0 || this->_hp == 0)
+	{
+		std::cout << this->_name << " the Frag has no more hp or energy " << std::endl;
+		return ;
+	}
+	this->_ep -= 1;
 	std::cout << this->_name << " HIGH FIVE! " << std::endl;
 }

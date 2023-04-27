@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:07:02 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/26 15:25:27 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/27 09:25:20 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,14 @@ ClapTrap & ClapTrap::operator=(const ClapTrap &assign)
 
 
 //Member function
-void	ClapTrap::attack(const std::string &target) const
+void	ClapTrap::attack(const std::string &target)
 {
+	if (this->_ep == 0 || this->_hp == 0)
+	{
+		std::cout << this->_name << " has no more hp or energy " << std::endl;
+		return ;
+	}
+	this->_ep -= 1;
 	std::cout << this->_name << " attacks " << target << ", causing "
 				<< this->_ad << " points of damage!"<< std::endl;
 }
@@ -79,8 +85,15 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	if (this->_ep == 0 || this->_hp == 0)
+	{
+		std::cout << this->_name << " has no more hp or energy " << std::endl;
+		return ;
+	}
+
 	unsigned int new_hp;
 
+	this->_ep -= 1;
 	new_hp = this->_hp + amount;
 	if (new_hp < this->_hp)
 	{
@@ -116,4 +129,3 @@ void	ClapTrap::setName(std::string name)
 	this->_name = name;
 	return ;
 }
-		

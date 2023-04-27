@@ -4,7 +4,7 @@ SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 	   
 OBJ = $(SRCS:.cpp=.o)
 
-CFLAGS = -Wall -Wextra -Werror $(CPPFLAGS) $(FFLAGS) -g
+CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow $(CPPFLAGS) $(FFLAGS) -g
 CPPFLAGS = -std=c++98
 FFLAGS = -fsanitize=address
 
