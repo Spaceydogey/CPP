@@ -1,7 +1,7 @@
-∫
-NAME = 
+
+NAME = ex00
  
-SRCS = 
+SRCS = main.cpp Animal.cpp
 	   
 OBJ = $(SRCS:.cpp=.o)
 
