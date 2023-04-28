@@ -14,10 +14,11 @@
 #include <iostream>
 
 
-Dog::Dog() : Animal()
+Dog::Dog() : AAnimal()
 {
 	std::cout << "\e[0;32mDefault Dog constructor\e[0m" << std::endl;
 	this->_type = "Dog";
+	this->_brain = new Brain;
 }
 
 Dog::Dog( const Dog & to_cp )
@@ -29,6 +30,7 @@ Dog::Dog( const Dog & to_cp )
 
 Dog::~Dog()
 {
+	delete this->_brain;
 	std::cout << "\e[0;31mDefault Dog destructor\e[0m" << std::endl;
 }
 
@@ -36,12 +38,18 @@ Dog::~Dog()
 Dog &	Dog::operator=( Dog const & rhs )
 {
 	this->_type = rhs.getType();
+	this->_brain = new Brain(*rhs.getBrain());
 	return (*this);
 }
 
 std::string	Dog::getType(void) const
 {
 	return (this->_type);
+}
+
+Brain	*Dog::getBrain(void) const
+{
+	return (this->_brain);
 }
 
 void	Dog::makeSound(void) const

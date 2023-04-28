@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include "Brain.hpp"
 # include "Animal.hpp"
 
 class Dog : public Animal
@@ -28,7 +29,11 @@ class Dog : public Animal
 
 		Dog &			operator=( Dog const & rhs );
 		virtual void	makeSound(void) const;
+		Brain			*getBrain(void) const;
 		std::string		getType(void) const;
+	private:
+
+		Brain	*_brain;
 
 };
 
