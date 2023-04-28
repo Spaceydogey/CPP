@@ -1,50 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:02:44 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/28 13:56:36 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/28 11:52:47 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 #include <iostream>
 
 
-Animal::Animal() : _type("Animal")
+Cat::Cat() : Animal()
 {
-	std::cout << "\e[0;33mDefault Animal constructor\e[0m" << std::endl;
+	std::cout << "\e[0;32mDefault Cat constructor\e[0m" << std::endl;
+	this->_type = "Cat";
 }
 
-Animal::Animal( const Animal & to_cp )
+Cat::Cat( const Cat & to_cp )
 {
-	std::cout << "Copy Animal constructor" << std::endl;
+	std::cout << "Copy Cat constructor" << std::endl;
 	*this = to_cp;
 }
 
 
-Animal::~Animal()
+Cat::~Cat()
 {
-	std::cout << "\e[0;35mDefault Animal destructor\e[0m" << std::endl;
+	std::cout << "\e[0;31mDefault Cat destructor\e[0m" << std::endl;
 }
 
 
 
-Animal &	Animal::operator=( Animal const & rhs )
+Cat &	Cat::operator=( Cat const & rhs )
 {
 	this->_type = rhs.getType();
 	return (*this);
 }
 
-std::string	Animal::getType(void) const
+std::string	Cat::getType(void) const
 {
 	return (this->_type);
 }
 
-void	Animal::makeSound(void) const
+void	Cat::makeSound(void) const
 {
-	std::cout << "No sound made" << std::endl;
+	std::cout << "moew" << std::endl;
 }

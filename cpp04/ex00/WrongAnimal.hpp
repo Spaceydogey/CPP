@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 # include <string>
 
-class Animal
+class WrongAnimal
 {
 
 	public:
 
-		Animal(void);
-		Animal( Animal const & src );
-		virtual ~Animal(void);
+		WrongAnimal(void);
+		WrongAnimal( WrongAnimal const & src );
+		~WrongAnimal(void);
 
-		Animal &		operator=( Animal const & rhs );
-		virtual void	makeSound(void) const;
+		WrongAnimal &operator=( WrongAnimal const & rhs );
+		void		makeSound(void) const;
 		std::string	getType(void) const;
 	protected:
 		std::string	_type;
