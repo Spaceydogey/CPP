@@ -1,7 +1,7 @@
 
-NAME = 
+NAME = ex04 
  
-SRCS = 
+SRCS = main.cpp 
 	   
 OBJ = $(SRCS:.cpp=.o)
 

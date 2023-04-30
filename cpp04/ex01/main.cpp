@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:33:10 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/28 16:58:12 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/04/30 15:31:07 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ int main(void)
 		std::cout << a->getBrain()->getIdea(1) << std::endl;
 		std::cout << a->getBrain()->getIdea(2) << std::endl;
 		std::cout << std::endl;
+		delete a;
+		delete b;
 	}
 	{
 		std::cout << "\e[1;34m############## ASKED TEST ##############\e[0m" << std::endl;
