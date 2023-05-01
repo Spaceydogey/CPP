@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:36:10 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/30 17:53:40 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/01 10:04:29 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class AMateria
         //Methodes
         virtual AMateria *	clone () const = 0;
 		virtual	void		use(ICharacter& target);
-
+		
 	protected:
         //Atributes
         std::string const   _type;
