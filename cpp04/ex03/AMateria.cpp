@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 16:39:42 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/30 17:55:13 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/01 14:35:25 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ AMateria::~AMateria()
 // Operators
 AMateria & AMateria::operator=(const AMateria &rhs)
 {
-	this->_type = rhs.getType();
+	(void)rhs;
 	return *this;
 }
 

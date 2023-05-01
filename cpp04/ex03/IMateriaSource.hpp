@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/30 19:07:46 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/01 14:57:53 by hdelmas          ###   ########.fr       */
+/*   Created: 2023/05/01 13:53:40 by hdelmas           #+#    #+#             */
+/*   Updated: 2023/05/01 14:54:43 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"
 
-class Ice : public AMateria
+class IMateriaSource
 {
 	public:
 		// Constructors
-		Ice(void);
-		Ice(const Ice &copy);
+		IMateriaSource() {};
+		IMateriaSource(const IMateriaSource &to_cp) {(void)to_cp;};
 		
 		// Destructor
-		~Ice(void);
+		virtual ~IMateriaSource() {};
 		
 		// Operators
-		Ice & operator=(const Ice &assign);
-        
-        //Methodes
-        virtual AMateria *	clone () const ;
-		virtual	void		use(ICharacter& target);
+		IMateriaSource & operator=(const IMateriaSource &rhs) {(void)rhs;return (*this);};
 		
+		//Member Functions
+		virtual void    	learnMateria(AMateria *m) = 0;
+		virtual AMateria*	createMateria(std::string const & type) = 0;
 	private:
 		
 };

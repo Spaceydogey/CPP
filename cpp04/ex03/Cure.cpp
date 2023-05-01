@@ -34,7 +34,7 @@ Cure::~Cure()
 // Operators
 Cure & Cure::operator=(const Cure &rhs)
 {
-	(void) rhs;
+	(void)rhs;
 	return *this;
 }
 
@@ -44,7 +44,7 @@ AMateria *	Cure::clone () const
     return (new Cure());
 }
 
-void		use(ICharacter& target)
+void		Cure::use(ICharacter& target)
 {
-    std::cout << "* heals " << target.getName() << "wounds *" << std::endl;
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

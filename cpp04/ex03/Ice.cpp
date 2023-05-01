@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:07:45 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/30 19:11:13 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/01 15:07:29 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ AMateria *	Ice::clone () const
     return (new Ice());
 }
 
-void		use(ICharacter& target)
+void		Ice::use(ICharacter& target)
 {
-    std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

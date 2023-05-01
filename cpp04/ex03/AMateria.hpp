@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:36:10 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/01 10:04:29 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/01 15:08:44 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-# include "ICharacter"
+# include "ICharacter.hpp"
 
 class AMateria
 {
@@ -26,7 +26,7 @@ class AMateria
 		AMateria(std::string const & type);
 		
         // Destructor
-		~AMateria();
+		virtual ~AMateria();
 		
 		// Operators
 		AMateria & operator=(const AMateria &assign);

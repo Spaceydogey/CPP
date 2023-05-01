@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:07:46 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/01 13:46:19 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/01 14:48:10 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-# include "AMateria,hpp"
+# include "AMateria.hpp"
 
 class Cure : public AMateria
 {
@@ -28,7 +28,7 @@ class Cure : public AMateria
 		~Cure(void);
 		
 		// Operators
-		Cure & operator=(const Ice &assign);
+		Cure & operator=(const Cure &assign);
         
         //Methodes
         virtual AMateria *	clone () const ;

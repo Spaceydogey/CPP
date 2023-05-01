@@ -1,7 +1,7 @@
 
 NAME = ex04 
  
-SRCS = main.cpp 
+SRCS = AMateria.cpp Character.cpp Cure.cpp Ice.cpp main.cpp MateriaSource.cpp
 	   
 OBJ = $(SRCS:.cpp=.o)
 
