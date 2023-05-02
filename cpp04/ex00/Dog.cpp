@@ -23,6 +23,7 @@ Dog::Dog() : Animal()
 Dog::Dog( const Dog & to_cp )
 {
 	std::cout << "\e[0;32mCopy Dog constructor\e[0m" << std::endl;
+	this->_type = "Dog";
 	*this = to_cp;
 }
 
@@ -35,7 +36,7 @@ Dog::~Dog()
 
 Dog &	Dog::operator=( Dog const & rhs )
 {
-	this->_type = rhs.getType();
+	(void)rhs;
 	return (*this);
 }
 

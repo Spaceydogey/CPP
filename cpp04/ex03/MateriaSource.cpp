@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 14:05:27 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/01 15:04:45 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:00:28 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,13 @@ MateriaSource & MateriaSource::operator=(const MateriaSource &rhs)
 //Member Functions
 void    MateriaSource::learnMateria(AMateria *m)
 {
-	this->_list[this->_size] = m;
-	this->_size += 1;
+	if (this->_size < 4)
+	{
+		this->_list[this->_size] = m;
+		this->_size += 1;
+	}
+	else 
+		std::cout << "Source is full" << std::endl;
 }
 
 AMateria*    MateriaSource::createMateria(std::string const & type)

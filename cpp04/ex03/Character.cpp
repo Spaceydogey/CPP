@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 10:58:29 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/01 16:22:51 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/02 14:56:22 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void               Character::equip(AMateria* m)
 	int i;
 
 	i = -1;
-	while (this->_inventory[++i] && i < INV_SIZE);
+	while (++i < INV_SIZE && this->_inventory[i] );
 	if (i < INV_SIZE)
 		this->_inventory[i] = m;
 	else
@@ -98,7 +98,7 @@ void                Character::unequip(int idx)
 
 void                Character::use(int idx, ICharacter& target)
 {
-	if (!this->_inventory[idx] || idx >= INV_SIZE || idx < 0)
+	if (idx >= INV_SIZE || idx < 0 || !this->_inventory[idx] )
 		return ;
 	this->_inventory[idx]->use(target);
 }

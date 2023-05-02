@@ -21,6 +21,7 @@ Cure::Cure() : AMateria("cure")
 Cure::Cure(const Cure &copy) : AMateria("cure")
 {
 	std::cout << "\e[0;33mCopy Cure constructor\e[0m" << std::endl;
+	(void)copy;
 }
 
 

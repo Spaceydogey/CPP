@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:02:44 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/04/28 17:06:42 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/02 15:05:23 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ Cat::Cat() : AAnimal()
 Cat::Cat( const Cat & to_cp )
 {
 	std::cout << "\e[0;32mCopy Cat constructor\e[0m" << std::endl;
+	this->_type = "Cat";
+	this->_brain = NULL;
 	*this = to_cp;
 }
 
@@ -38,7 +40,7 @@ Cat::~Cat()
 
 Cat &	Cat::operator=( Cat const & rhs )
 {
-	this->_type = rhs.getType();
+	delete this->_brain;
 	this->_brain = new Brain(*rhs.getBrain());
 	return (*this);
 }

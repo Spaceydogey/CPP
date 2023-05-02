@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 14:05:29 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/01 14:24:35 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/02 14:57:56 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class MateriaSource : public IMateriaSource
 		
 	private:
         int         _size;
-        AMateria    *_list[];
+        AMateria    *_list[4];
 		
 };
 

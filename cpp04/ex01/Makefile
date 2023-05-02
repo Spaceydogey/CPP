@@ -15,7 +15,7 @@ RM = rm -f
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 		
-.c.o:
+.cpp.o:
 		$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 all: $(NAME)

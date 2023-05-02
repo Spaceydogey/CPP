@@ -1,5 +1,5 @@
 
-NAME = ex04 
+NAME = ex03
  
 SRCS = AMateria.cpp Character.cpp Cure.cpp Ice.cpp main.cpp MateriaSource.cpp
 	   
@@ -16,7 +16,7 @@ RM = rm -f
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 		
-.c.o:
+.cpp.o:
 		$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 all: $(NAME)
