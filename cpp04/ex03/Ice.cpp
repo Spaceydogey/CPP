@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:07:45 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/04 08:43:42 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/04 13:26:57 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Ice::Ice() : AMateria("ice")
 Ice::Ice(const Ice &copy) : AMateria("ice")
 {
 	std::cout << "\e[0;33mCopy Ice constructor\e[0m" << std::endl;
-	(void)copy;y
+	(void)copy;
 }
 
 
