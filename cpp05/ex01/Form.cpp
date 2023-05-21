@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:51:09 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/20 18:14:12 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/21 13:21:45 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Form::Form() : _name("default"),  _signed(false), _gradeToSign(150),
 }
 
 Form::Form(const Form &copy) : _name(copy.getName()), 
-								_signed(copy.getSigned()),
+								_signed(false),
 								_gradeToSign(copy.getGradeSign()),
 								_gradeToEx(copy.getGradeEx())
 {
@@ -64,7 +64,7 @@ std::ostream & operator<<(std::ostream &out, const Form &f)
 							<< ", form status : " << f.getSigned()
 							<< ", grade to be signed : " << f.getGradeSign()
 							<< ", grade to be executed : " << f.getGradeEx()
-							<< "." << std::endl;
+							<< ".";
 	return (out);
 }
 
