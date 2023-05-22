@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:51:09 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/21 13:21:45 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/22 17:41:35 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Form::Form(const Form &copy) : _name(copy.getName()),
 								_gradeToEx(copy.getGradeEx())
 {
 	std::cout << "\e[0;33mCopy Constructor called of Form\e[0m" << std::endl;
+	(void)copy;
 }
 
 
