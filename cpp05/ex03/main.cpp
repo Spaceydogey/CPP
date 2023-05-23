@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:20:32 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/23 12:28:13 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 13:41:37 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,26 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
 	try
 	{
 		std::cout << "--- TEST 1 ---" << std::endl << std::endl	;
-		Bureaucrat	a("boop", 150);
-		Bureaucrat	b("beep", 10);
-		ShrubberyCreationForm	f1("tree");
-
+		AForm		*f1;
+		Bureaucrat	a("boop", 1);
+		Intern		b;
+		
+		f1 = b.makeForm("ShrubberyCreationForm", "beep");
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
-		std::cout << f1 << std::endl;
+		std::cout << *f1 << std::endl;
 
-		a.signForm(f1);
-		b.signForm(f1);
-		std::cout << f1 << std::endl;
-		a.executeForm(f1);
-		b.executeForm(f1);
+		a.signForm(*f1);
+		std::cout << *f1 << std::endl;
+		a.executeForm(*f1);
+		delete (f1);
 	}
 	catch (std::exception &e)
 	{
@@ -40,69 +41,91 @@ int main()
 	}
 	std::cout << std::endl;
 
+	try
+	{
+		std::cout << "--- TEST 1 ---" << std::endl << std::endl	;
+		AForm		*f1;
+		Bureaucrat	a("boop", 1);
+		Intern		b;
+		
+		f1 = b.makeForm("ShrubberyCreationForm", "beep");
+		std::cout << a << std::endl;
+		std::cout << b << std::endl;
+		std::cout << *f1 << std::endl;
+
+		a.signForm(*f1);
+		std::cout << *f1 << std::endl;
+		a.executeForm(*f1);
+		delete (f1);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	
 	try
 	{
 		std::cout << "--- TEST 2 ---" << std::endl << std::endl	;
-
-		Bureaucrat	a("boop", 150);
-		Bureaucrat	b("beep", 10);
-		RobotomyRequestForm	f1("robot");
-
+		AForm		*f1;
+		Bureaucrat	a("boop", 1);
+		Intern		b;
+		
+		f1 = b.makeForm("RobotomyRequestForm", "beep");
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
-		std::cout << f1 << std::endl;
+		std::cout << *f1 << std::endl;
 
-		a.signForm(f1);
-		b.signForm(f1);
-		std::cout << f1 << std::endl;
-		a.executeForm(f1);
-		b.executeForm(f1);
+		a.signForm(*f1);
+		std::cout << *f1 << std::endl;
+		a.executeForm(*f1);
+		delete (f1);
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
+	
 	try
 	{
 		std::cout << "--- TEST 3 ---" << std::endl << std::endl	;
-
-		Bureaucrat	a("boop", 150);
-		Bureaucrat	b("beep", 10);
-		PresidentialPardonForm	f1("pres");
-
+		AForm		*f1;
+		Bureaucrat	a("boop", 1);
+		Intern		b;
+		
+		f1 = b.makeForm("PresidentialPardonForm", "beep");
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
-		std::cout << f1 << std::endl;
+		std::cout << *f1 << std::endl;
 
-		a.signForm(f1);
-		std::cout << f1 << std::endl;
-		a.executeForm(f1);
-		b.executeForm(f1);
+		a.signForm(*f1);
+		std::cout << *f1 << std::endl;
+		a.executeForm(*f1);
+		delete (f1);
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
+
 	try
 	{
 		std::cout << "--- TEST 4 ---" << std::endl << std::endl	;
-
-		Bureaucrat	a("boop", 150);
-		Bureaucrat	b("beep", 10);
-		ShrubberyCreationForm	f1("tree");
-		RobotomyRequestForm	f2("robot");
-		PresidentialPardonForm	f3("pres");
-
+		AForm		*f1;
+		Bureaucrat	a("boop", 1);
+		Intern		b;
+		
+		f1 = b.makeForm("yes", "beep");
 		std::cout << a << std::endl;
-		std::cout << f1 << std::endl;
-		std::cout << f2 << std::endl;
-		std::cout << f3 << std::endl;
+		std::cout << b << std::endl;
+		std::cout << *f1 << std::endl;
 
-		a.executeForm(f1);
-		a.executeForm(f2);
-		a.executeForm(f3);
+		a.signForm(*f1);
+		std::cout << *f1 << std::endl;
+		a.executeForm(*f1);
+		delete (f1);
 	}
 	catch (std::exception &e)
 	{

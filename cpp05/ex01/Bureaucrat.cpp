@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:22:00 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/20 18:16:31 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 10:46:00 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void		Bureaucrat::lower(void)
 		this->_grade += 1;
 }
 
-void		Bureaucrat::signeForm(Form &form)
+void		Bureaucrat::signForm(Form &form)
 {
 	try
 	{

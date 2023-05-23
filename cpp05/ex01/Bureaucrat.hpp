@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:21:58 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/20 18:11:14 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 10:46:04 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Bureaucrat
 		std::string	getName(void) const;
 		int			getGrade(void) const;
 
-		void		signeForm(Form &form);
+		void		signForm(Form &form);
 		void		higher(void);
 		void		lower(void);
 		

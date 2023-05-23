@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:20:32 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/20 18:18:10 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 10:46:18 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	main(void)
 		
 		std::cout << "Bureaucrat : " << b << std::endl;
 		std::cout << "Form : " << f << std::endl;
-		b.signeForm(f);
+		b.signForm(f);
 		std::cout << "Form : " << f << std::endl;
 		b.lower();
 		std::cout << "Bureaucrat : " << b << std::endl;
-		b.signeForm(f);
+		b.signForm(f);
 	}
 	catch (std::exception & e)
 	{

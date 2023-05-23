@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:49:42 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/23 10:41:30 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 13:38:45 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Pres
 	this->setTarget(target);
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) :  AForm("PresidentialPardonForm", 25, 5)
 {
 	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of PresidentialPardonForm\e[0m" << std::endl;

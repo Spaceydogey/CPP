@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:43:15 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/23 11:03:13 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 13:27:16 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRe
 	this->setTarget(target);
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)  : AForm("RobotomyRequestForm", 72, 45)
 {
 	*this = copy;
 	std::cout << "\e[0;33mCopy Constructor called of RobotomyRequestForm\e[0m" << std::endl;
