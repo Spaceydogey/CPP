@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:20:32 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/23 12:28:13 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 14:08:14 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include <unistd.h>
 
 int main()
 {
+	std::srand(time(0));
 	try
 	{
 		std::cout << "--- TEST 1 ---" << std::endl << std::endl	;
@@ -57,6 +59,9 @@ int main()
 		std::cout << f1 << std::endl;
 		a.executeForm(f1);
 		b.executeForm(f1);
+		b.executeForm(f1);
+		b.executeForm(f1);
+		b.executeForm(f1);
 	}
 	catch (std::exception &e)
 	{
@@ -69,6 +74,7 @@ int main()
 
 		Bureaucrat	a("boop", 150);
 		Bureaucrat	b("beep", 10);
+		Bureaucrat	c("oi", 1);
 		PresidentialPardonForm	f1("pres");
 
 		std::cout << a << std::endl;
@@ -76,9 +82,11 @@ int main()
 		std::cout << f1 << std::endl;
 
 		a.signForm(f1);
+		b.signForm(f1);
 		std::cout << f1 << std::endl;
 		a.executeForm(f1);
 		b.executeForm(f1);
+		c.executeForm(f1);
 	}
 	catch (std::exception &e)
 	{

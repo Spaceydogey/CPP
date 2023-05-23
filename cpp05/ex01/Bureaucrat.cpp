@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:22:00 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/23 10:46:00 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 14:18:28 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	Bureaucrat::getGrade() const
 	return (this->_grade);
 }
 
-void		Bureaucrat::higher(void)
+void		Bureaucrat::promote(void)
 {
 	if (this->getGrade() - 1 < 1)
 		throw Bureaucrat::GradeTooHighException();
@@ -80,7 +80,7 @@ void		Bureaucrat::higher(void)
 		this->_grade -= 1;
 }
 
-void		Bureaucrat::lower(void)
+void		Bureaucrat::demote(void)
 {
 	if (this->getGrade() + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();

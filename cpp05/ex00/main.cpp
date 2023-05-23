@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:20:32 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/20 17:56:40 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 14:18:28 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ int	main(void)
 		/* do some stuff with bureaucrats */
 		Bureaucrat	b("boop", 1);	
 		std::cout << b << std::endl;
-		b.lower();
+		b.demote();
 		std::cout << b << std::endl;
-		b.higher();
+		b.promote();
 		std::cout << b << std::endl;
-		b.higher();
+		b.promote();
 		std::cout << b << std::endl;
 	}
 	catch (std::exception & e)
@@ -63,11 +63,11 @@ int	main(void)
 		/* do some stuff with bureaucrats */
 		Bureaucrat	b("beep", 150);	
 		std::cout << b << std::endl;
-		b.higher();
+		b.promote();
 		std::cout << b << std::endl;
-		b.lower();
+		b.demote();
 		std::cout << b << std::endl;
-		b.lower();
+		b.demote();
 		std::cout << b << std::endl;
 	}
 	catch (std::exception & e)

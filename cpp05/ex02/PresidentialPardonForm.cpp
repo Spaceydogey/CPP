@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:49:42 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/23 10:41:30 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 13:51:54 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
 void		PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	this->AForm::execute(executor);
-	std::cout << this->getTarget() << "has been pardoned by Zaphod Beeblebrox."
+	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox."
 				<< std::endl;
 }

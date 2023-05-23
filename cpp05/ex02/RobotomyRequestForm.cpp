@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:43:15 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/23 11:03:13 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/23 14:20:36 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,10 @@ void		RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	int check;
 
 	this->AForm::execute(executor);
-	srand (time(NULL));
-	check = rand() % 2;
-	if (check)
+	check = std::rand() % 2;
+	if (check == 0)
 		std::cout << "*bzzz bzzzz* " << this->getTarget()
-			<< "has been robotomized *bzzz bzzzz*" << std::endl;
+			<< " has been robotomized *bzzz bzzzz*" << std::endl;
 	else
 		std::cout << "*bzzz bzzzz* robotomy  on "
 			<< this->getTarget() << " failed *bzzz bzzzz*" << std::endl;
