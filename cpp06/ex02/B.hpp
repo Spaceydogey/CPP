@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/25 11:39:02 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/25 16:28:56 by hdelmas          ###   ########.fr       */
+/*   Created: 2023/05/25 17:24:29 by hdelmas           #+#    #+#             */
+/*   Updated: 2023/05/25 17:50:01 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
+#ifndef B_HPP
+# define B_HPP
 
+# include <iostream> 
+# include <string>
+# include "Base.hpp"
 
-struct Data
+class B : public Base 
 {
-	Data() ;
-	Data(const Data &copy);
-	~Data();
-	Data & operator=(const Data &assign);
-	int		value;
-	float	value2;
+	public:
+		virtual ~B(){};
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 15:18:09 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/25 11:22:52 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/25 13:41:42 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ void	ScalarConverter::print(const char _char, const int _int,
 		floatStart = "+";
 	if (_double == HUGE_VAL)
 		doubleStart = "+";
-		
 	if (_char == 0)
+		std::cout << "char: Non displayable" << std::endl;
+	else if (_char == -1)
 		std::cout << "char: impossible" << std::endl;
 	else 
 		std::cout << "char: " << _char << std::endl;
@@ -147,7 +148,7 @@ int	ScalarConverter::fromDouble(std::string toConvert)
 
 int ScalarConverter::fromUndefined(std::string toConvert)
 {
-	const char 		_char = 0;
+	const char 		_char = -1;
 	const int		_int = 0;
 	const float		_float = checkLimitf(toConvert);
 	const double	_double = checkLimit(toConvert);

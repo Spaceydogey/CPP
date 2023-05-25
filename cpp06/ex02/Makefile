@@ -1,6 +1,6 @@
-NAME = serialize
+NAME = ex02
  
-SRCS = main.cpp Serializer.cpp Data.cpp
+SRCS = main.cpp
 	   
 OBJ = $(SRCS:.cpp=.o)
 
