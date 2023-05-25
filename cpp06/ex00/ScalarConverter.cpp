@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 15:18:09 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/24 23:29:40 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/25 10:02:55 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ScalarConverter::print(const char _char, const int _int,
 	std::string doubleEnd = "";
 	std::string floatStart = "";
 	std::string doubleStart = "";
-	
+	std::cout.precision(9);
 	if (_float == static_cast<float>(_int))
 		floatEnd = ".0";
 	if (_double == static_cast<double>(_int))
@@ -60,7 +60,7 @@ void	ScalarConverter::print(const char _char, const int _int,
 		std::cout << "char: impossible" << std::endl;
 	else 
 		std::cout << "char: " << _char << std::endl;
-	if (_double > 2147483647 || _double < -2147483648 || std::isnan(_double))
+	if (_double > 2147483647. || _double < -2147483648. || std::isnan(_double))
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << _int << std::endl;
@@ -100,7 +100,7 @@ void	ScalarConverter::fromInt(std::string toConvert)
 
 void	ScalarConverter::fromFloat(std::string toConvert)
 {
-	std::istringstream ss(toConvert); 
+	std::istringstream ss(toConvert.erase(toConvert.size() - 1)); 
 	float	converted;
 
 	ss >> converted;
@@ -122,7 +122,7 @@ void	ScalarConverter::fromDouble(std::string toConvert)
 {
 	std::istringstream ss(toConvert); 
 	double	converted;
-
+	
 	ss >> converted;
 	if (ss.fail())
 	{
@@ -177,7 +177,7 @@ int	ScalarConverter::convert(std::string toConvert)
 			ScalarConverter::fromUndefined(toConvert);
 			return (0);
 		default:
-			std::cout << "##ERROR##" << std::endl;
+			std::cerr << "Error: Wrong argument" << std::endl;
 			return (1);
 	}
 }
