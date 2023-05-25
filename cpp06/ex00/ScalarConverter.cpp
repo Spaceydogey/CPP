@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 15:18:09 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/25 11:10:05 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/25 11:22:52 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ ScalarConverter & ScalarConverter::operator=(const ScalarConverter &assign)
 	return *this;
 }
 
+
+// Print
 void	ScalarConverter::print(const char _char, const int _int,
 								const float _float, const double _double)
 {
@@ -67,6 +69,8 @@ void	ScalarConverter::print(const char _char, const int _int,
 	std::cout << "double: " << doubleStart << _double << doubleEnd << std::endl;
 }
 
+
+// Conversion
 int	ScalarConverter::fromChar(std::string toConvert)
 {
 	const char 		_char = toConvert[0];
@@ -155,10 +159,7 @@ int ScalarConverter::fromUndefined(std::string toConvert)
 
 int	ScalarConverter::convert(std::string toConvert)
 {
-	int	type;
-
-	type = getType(toConvert);
-	switch (type)
+	switch (getType(toConvert))
 	{
 		case CHAR:
 			std::cout << "##CHAR##" << std::endl;
