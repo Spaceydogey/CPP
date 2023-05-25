@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 23:14:43 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/24 23:28:19 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/25 11:02:02 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ float checkLimitf(std::string toConvert)
 {
 	if (toConvert == "+inff" || toConvert == "+inf")
 	{
-			return (std::numeric_limits<float>::infinity());
+			return (HUGE_VALF);
 	}
 	if (toConvert == "-inff" || toConvert == "-inf")
 	{
-			return (-1 * std::numeric_limits<float>::infinity());
+			return (-1 * HUGE_VALF);
 	}
 	return (std::numeric_limits<double>::quiet_NaN());
 }
@@ -29,11 +29,11 @@ double checkLimit(std::string toConvert)
 {
 	if (toConvert == "+inff" || toConvert == "+inf")
 	{
-			return (std::numeric_limits<double>::infinity());
+			return (HUGE_VAL);
 	}
 	if (toConvert == "-inff" || toConvert == "-inf")
 	{
-			return (-1 * std::numeric_limits<double>::infinity());
+			return (-1 * HUGE_VAL);
 	}
 	return (std::numeric_limits<double>::quiet_NaN());
 }

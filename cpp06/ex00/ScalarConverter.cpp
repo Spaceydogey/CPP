@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 15:18:09 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/25 10:02:55 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/25 11:10:05 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,13 @@ void	ScalarConverter::print(const char _char, const int _int,
 	std::string doubleEnd = "";
 	std::string floatStart = "";
 	std::string doubleStart = "";
-	std::cout.precision(9);
 	if (_float == static_cast<float>(_int))
 		floatEnd = ".0";
 	if (_double == static_cast<double>(_int))
 		doubleEnd = ".0";
-	if (_float == std::numeric_limits<float>::infinity())
+	if (_float == HUGE_VALF)
 		floatStart = "+";
-	if (_double == std::numeric_limits<double>::infinity())
+	if (_double == HUGE_VAL)
 		doubleStart = "+";
 		
 	if (_char == 0)
@@ -68,7 +67,7 @@ void	ScalarConverter::print(const char _char, const int _int,
 	std::cout << "double: " << doubleStart << _double << doubleEnd << std::endl;
 }
 
-void	ScalarConverter::fromChar(std::string toConvert)
+int	ScalarConverter::fromChar(std::string toConvert)
 {
 	const char 		_char = toConvert[0];
 	const int		_int = static_cast<int>(toConvert[0]);
@@ -76,9 +75,10 @@ void	ScalarConverter::fromChar(std::string toConvert)
 	const double	_double = static_cast<double>(toConvert[0]);
 	
 	ScalarConverter::print(_char, _int, _float, _double);
+	return (0);
 }
 
-void	ScalarConverter::fromInt(std::string toConvert)
+int	ScalarConverter::fromInt(std::string toConvert)
 {
 	std::istringstream ss(toConvert); 
 	int	converted;
@@ -87,7 +87,7 @@ void	ScalarConverter::fromInt(std::string toConvert)
 	if (ss.fail())
 	{
 		std::cout << "Error: Int overflow" <<std::endl;
-		return ;
+		return (1);
 	}
 
 	const char 		_char = checkChar(converted);
@@ -96,9 +96,10 @@ void	ScalarConverter::fromInt(std::string toConvert)
 	const double	_double = static_cast<double>(converted);
 	
 	ScalarConverter::print(_char, _int, _float, _double);
+	return (0);
 }
 
-void	ScalarConverter::fromFloat(std::string toConvert)
+int	ScalarConverter::fromFloat(std::string toConvert)
 {
 	std::istringstream ss(toConvert.erase(toConvert.size() - 1)); 
 	float	converted;
@@ -107,7 +108,7 @@ void	ScalarConverter::fromFloat(std::string toConvert)
 	if (ss.fail())
 	{
 		std::cout << "Error: Float overflow" <<std::endl;
-		return ;
+		return (1);
 	}
 	
 	const char 		_char = checkChar(static_cast<int>(converted));
@@ -116,9 +117,10 @@ void	ScalarConverter::fromFloat(std::string toConvert)
 	const double	_double = static_cast<double>(converted);
 	
 	ScalarConverter::print(_char, _int, _float, _double);
+	return (0);
 }
 
-void	ScalarConverter::fromDouble(std::string toConvert)
+int	ScalarConverter::fromDouble(std::string toConvert)
 {
 	std::istringstream ss(toConvert); 
 	double	converted;
@@ -127,7 +129,7 @@ void	ScalarConverter::fromDouble(std::string toConvert)
 	if (ss.fail())
 	{
 		std::cout << "Error: Double overflow" <<std::endl;
-		return ;
+		return (1);
 	}
 
 	const char 		_char = checkChar(static_cast<int>(converted));
@@ -136,9 +138,10 @@ void	ScalarConverter::fromDouble(std::string toConvert)
 	const double	_double = converted;
 	
 	ScalarConverter::print(_char, _int, _float, _double);
+	return (0);
 }
 
-void ScalarConverter::fromUndefined(std::string toConvert)
+int ScalarConverter::fromUndefined(std::string toConvert)
 {
 	const char 		_char = 0;
 	const int		_int = 0;
@@ -146,6 +149,7 @@ void ScalarConverter::fromUndefined(std::string toConvert)
 	const double	_double = checkLimit(toConvert);
 
 	ScalarConverter::print(_char, _int, _float, _double);
+	return (0);
 }
 
 
@@ -158,24 +162,19 @@ int	ScalarConverter::convert(std::string toConvert)
 	{
 		case CHAR:
 			std::cout << "##CHAR##" << std::endl;
-			ScalarConverter::fromChar(toConvert);
-			return (0);
+			return (ScalarConverter::fromChar(toConvert));
 		case INT:
 			std::cout << "##INT##" << std::endl;
-			ScalarConverter::fromInt(toConvert);
-			return (0);
+			return (ScalarConverter::fromInt(toConvert));
 		case FLOAT:
 			std::cout << "##FLOAT##" << std::endl;
-			ScalarConverter::fromFloat(toConvert);
-			return (0);
+			return (ScalarConverter::fromFloat(toConvert));
 		case DOUBLE:
 			std::cout << "##DOUBLE##" << std::endl;
-			ScalarConverter::fromDouble(toConvert);
-			return (0);
+			return (ScalarConverter::fromDouble(toConvert));
 		case UNDEFINED:
 			std::cout << "##UNDEFINED##" << std::endl;
-			ScalarConverter::fromUndefined(toConvert);
-			return (0);
+			return (ScalarConverter::fromUndefined(toConvert));
 		default:
 			std::cerr << "Error: Wrong argument" << std::endl;
 			return (1);
