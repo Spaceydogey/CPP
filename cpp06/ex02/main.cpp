@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 17:27:18 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/25 18:07:45 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/26 11:48:54 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,5 @@ int	main(void)
 	identify(base);
 	std::cout << "REFERENCE" << std::endl;
 	identify(rBase);
+	delete base;
 }
