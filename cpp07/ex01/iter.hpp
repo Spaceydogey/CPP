@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 17:45:17 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/26 19:13:12 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/26 20:08:45 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void boop(char &a)
 }
 
 template<typename T>
-void	ft_print(T *addr, size_t size)
+void	ft_print(T const  *addr, size_t const size)
 {
 	for (size_t j = 0; j < size; j++)
 		std::cout << addr[j];
@@ -66,7 +66,7 @@ void	ft_print(T *addr, size_t size)
 }
 
 template<>
-void	ft_print(float *addr, size_t size)
+void	ft_print(float const *addr, size_t const size)
 {
 	for (size_t j = 0; j < size; j++)
 		std::cout << addr[j] << " ";
