@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:39:54 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/27 17:51:57 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/28 12:29:48 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,13 @@ int main(int, char**)
 		std::cout << numbers.size() << std::endl;
 		std::cout << numbers2.size() << std::endl;
 
+	}
+	{
+		Array<int> numbers(5);
+		for (int i = 0; i < 5; i++)
+		{
+			std::cout << "numbers : " << numbers[i] <<std::endl;
+		}	
 	}
     return 0;
 }
