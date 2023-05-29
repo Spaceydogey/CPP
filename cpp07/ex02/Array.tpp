@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 15:39:36 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/27 15:43:58 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/29 12:26:24 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 template<typename T>
 Array<T>::Array()
 {
-	this->_size = 0;
+	this->_size = new T[0];
 	this->_array = NULL;
 }
 
