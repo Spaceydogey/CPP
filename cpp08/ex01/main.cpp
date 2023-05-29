@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:01:40 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/29 23:39:02 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/29 23:53:36 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,12 @@ int	main(void)
 	{
 		Span sp = Span(5);
 		std::vector<int> vect;
-		vect.push_back(6);
-		vect.push_back(3);
-		vect.push_back(17);
-		vect.push_back(9);
-		vect.push_back(11);
-		vect.push_back(11);
+		vect.push_back(1);
+		vect.push_back(1);
+		vect.push_back(1);
+		vect.push_back(1);
+		vect.push_back(1);
+		vect.push_back(1);
 		
 		sp.addNumberIt(vect.begin(), vect.end());
 		
