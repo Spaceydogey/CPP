@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:01:40 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/29 23:53:36 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/31 15:18:40 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	main(void)
 	try
 	{	
 		std::srand(time(0));
-		std::srand(1);
-		int		size = 20000;
+		// std::srand(12);
+		int		size = 1000000;
 		Span	sp(size);
 		for	(int i = 0; i < size; ++i)
 			sp.addNumber(std::rand());
@@ -37,9 +37,10 @@ int	main(void)
 
 		sp.addNumber(6);
 		sp.addNumber(3);
+		sp.addNumber(3);
 		sp.addNumber(17);
 		sp.addNumber(9);
-		sp.addNumber(11);
+		// sp.addNumber(11);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}

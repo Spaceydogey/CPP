@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:01:48 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/29 23:31:18 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/31 12:52:09 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,34 +69,32 @@ void	Span::addNumberIt(std::vector<int>::iterator begin,
 	this->_vect.insert(this->_vect.end(), begin, end);
 }
 
-int	Span::shortestSpan(void)
+unsigned int	Span::shortestSpan(void)
 {
 	if (this->_vect.size() <= 1)
 		throw Span::NoSpanExecption();
 	
-
-	std::vector<int>::const_iterator end = this->_vect.end();
-	std::vector<int>::const_iterator it1 = this->_vect.begin();
+	std::vector<int>	tmp(this->_vect);
 	std::vector<int>::const_iterator it2;
-	int	min = std::abs(*(it1 + 1) - *it1);
-	int	tmp;
+	std::sort(tmp.begin(), tmp.end());
+	std::vector<int>::const_iterator end = tmp.end() - 1;
+	std::vector<int>::const_iterator it1 = tmp.begin();
+	unsigned int 	min = static_cast<long long>(std::max(*(it1 + 1), *it1)) - static_cast<long long>(std::min(*(it1 + 1), *it1));
+	unsigned int	new_min;
 	
 	while (it1 != end)
 	{
-		it2 = it1 + 1;
-		while (it2 != end)
-		{
-			tmp = std::abs(*it2 - *it1);
-			if (it2 != it1 && tmp < min)
-				min = tmp;
-			++it2;
-		}
+	
+			new_min = static_cast<long long>(std::max(*(it1 + 1), *it1)) - static_cast<long long>(std::min(*(it1 + 1), *it1));
+			if (new_min < min)
+				min = new_min;
+	
 		++it1;
 	}
 	return (min);
 }
 
-int	Span::longestSpan(void)
+unsigned int	Span::longestSpan(void)
 {
 	if (this->_vect.size() <= 1)
 		throw Span::NoSpanExecption();	

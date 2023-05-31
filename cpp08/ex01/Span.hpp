@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:01:44 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/29 23:28:50 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/05/31 11:54:55 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ class Span
 		
 		// Operators
 		Span & operator=(const Span &assign);
-		void	addNumber(int newNbr);
-		void	addNumberIt(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-		int		shortestSpan(void);
-		int		longestSpan (void);
+		void				addNumber(int newNbr);
+		void				addNumberIt(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		unsigned int		shortestSpan(void);
+		unsigned int		longestSpan (void);
 		
 	private:
 		unsigned int		_size;
