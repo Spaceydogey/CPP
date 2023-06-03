@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 14:01:44 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/05/31 11:54:55 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/03 13:49:10 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Span
 	private:
 		unsigned int		_size;
 		std::vector<int>	_vect;
-		
+
 	class SpanFullExecption : public std::exception
 	{
 		public:

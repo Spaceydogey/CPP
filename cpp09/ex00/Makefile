@@ -1,6 +1,6 @@
 NAME = btc
  
-SRCS = main.cpp #BitcoinExchange.cpp
+SRCS = main.cpp BitCoinExchange.cpp
 	   
 OBJ = $(SRCS:.cpp=.o)
 
