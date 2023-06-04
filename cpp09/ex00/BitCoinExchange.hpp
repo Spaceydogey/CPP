@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 15:25:09 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/03 23:02:47 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/04 17:54:19 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <fstream>
 # include <map>
 # include <algorithm>
+# include <exception>
 
 
 class BitCoinExchange

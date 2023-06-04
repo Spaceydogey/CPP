@@ -5,40 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 14:26:47 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/04 16:31:08 by hdelmas          ###   ########.fr       */
+/*   Created: 2023/06/04 16:25:32 by hdelmas           #+#    #+#             */
+/*   Updated: 2023/06/04 19:52:56 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include "BitCoinExchange.hpp"
-#include <string>
+#include "RPN.hpp"
 
 int	main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		std::cerr << "Error: " << "Usage: ./btc [INPUT_FILE]" << std::endl;
+		std::cout << "Error: " << "Usage: ./RPN [INPUT_LINE]" << std::endl;
 		return (1);
 	}
-	try
-	{
-		BitCoinExchange	btc("data.csv");
-		try
-		{
-			btc.value(av[1]);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << "Error : " << e.what() << std::endl;
-		}
-		std::cout << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "Error : " << e.what() << std::endl;
-	}
-	
+	RPN	rpn(av[1]);
+	rpn.compute();
+	return (0);
 }

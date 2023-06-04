@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 15:25:12 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/03 23:11:30 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/04 16:46:26 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ double	BitCoinExchange::value(std::string date, float value) const
 }
 
 
-// Private functions
+// Private Functions
 
 bool	BitCoinExchange::check_date(std::string date)
 {
