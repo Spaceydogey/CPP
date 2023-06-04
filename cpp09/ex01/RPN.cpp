@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:25:35 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/04 20:33:54 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/05 01:11:33 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,27 +55,78 @@ RPN & RPN::operator=(const RPN &assign)
 
 void	RPN::parsing(std::string input)
 {
-	const_iterator it;
-	bool								isFirstLine = true;
+	const_iterator 	it;
+	int				count = 0;
+	int				tokenCount = 0;
 
 	it = input.begin();
 	while (it != input.end())
 	{
-		//first line
-		if (isFirstLine)
+		while (it != input.end() && *it == ' ')
+			++it;
+		if (it != input.end() && (isToken(*it)))
 		{
-			it = this->push(it, input.end(), &isdigit);
-			it = this->push(it, input.end(), &isdigit);
-			it = this->push(it, input.end(), &isToken);
-			isFirstLine = false;
-		}	
-		else
+			while (it != input.end() && (isToken(*it)))
+			{
+				it = this->push(it, input.end());
+				++tokenCount;
+				++it;
+				while (it != input.end() && *it == ' ')
+					++it;
+			}
+			if (tokenCount != count - 1)
+				throw InputException();
+		}
+		else if (it != input.end())
 		{
-			it = this->push(it, input.end(), &isdigit);
-			it = this->push(it, input.end(), &isToken);
+			it = this->push(it, input.end());
+			++count;
+			++it;
 		}
 	}
 }
+
+int					RPN::op(int token, int lhs, int rhs) const
+{
+	switch (token)
+	{
+		case '+' :
+			return (this->add(lhs, rhs));
+		case '-' :
+			return (this->minus(lhs, rhs));
+		case '/' :
+			return (this->div(lhs, rhs));
+		case '*' :
+			return (this->mult(lhs, rhs));
+		default :
+			throw ComputeException();
+			return (0);
+	}
+	
+}
+
+int					RPN::add(int lhs, int rhs) const
+{
+	return (lhs + rhs);
+}
+
+int					RPN::minus(int lhs, int rhs) const
+{
+	return (lhs - rhs);
+}
+
+int					RPN::div(int lhs, int rhs) const
+{
+	if (rhs == 0)
+		throw DivByZeroException();
+	return (lhs / rhs);
+}
+
+int					RPN::mult(int lhs, int rhs) const
+{
+	return (lhs * rhs);
+}
+
 
 
 // Member Functions
@@ -84,34 +135,27 @@ int	RPN::compute()
 	
 	int token = this->_stack.top();
 	this->_stack.pop();
-	std::cout << token << std::endl;
 	if (isToken(token))
 	{
-		int lhs;
-		int rhs = this->_stack.top();
-		this->_stack.pop();
-		lhs = this->compute();
+		int rhs = this->compute();
+		int lhs = this->compute();
 		return (this->op(token, lhs, rhs));
 	}
-	return (token);
+	return (token - '0');
 }
 
-RPN::const_iterator	RPN::push(RPN::const_iterator it, RPN::const_iterator end, int (*f)(int))
+RPN::const_iterator	RPN::push(RPN::const_iterator it, RPN::const_iterator end)
 {
-	while (it != end && *it == ' ')
-		++it;
-	if (it != end && f(*it))
+	if (it != end && (isdigit(*it) || isToken(*it)))
 	{
 		// std::cout << *it << std::endl;
 		if ((it + 1) != end && *(it + 1) != ' ')
 			throw InputException();
 		this->_stack.push(*it);
-		++it;
 	}
 	else
 		throw InputException();
-	while (it != end && *it == ' ')
-		++it;
+
 	return (it);
 }
 
@@ -122,4 +166,13 @@ RPN::const_iterator	RPN::push(RPN::const_iterator it, RPN::const_iterator end, i
 const char*	RPN::InputException::what() const throw()
 {
 	return ("Bad Input");
+}
+
+const char*	RPN::DivByZeroException::what() const throw()
+{
+	return ("Dividing By 0");
+}
+const char*	RPN::ComputeException::what() const throw()
+{
+	return ("Compute Exception");
 }

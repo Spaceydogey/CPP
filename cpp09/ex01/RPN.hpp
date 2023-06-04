@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:25:33 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/04 20:20:49 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/05 00:35:24 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,31 @@ class RPN
 		
 		// Member Functions
 		int				compute();
-		const_iterator	push(const_iterator it, const_iterator end, int (*f)(int));
+		const_iterator	push(const_iterator it, const_iterator end);
 		
 	
 	private:
 		std::stack<char>	_stack;
 		void				parsing(std::string input);
+		int					op(int token, int lhs, int rhs) const;
+		int					add(int lhs, int rhs) const;
+		int					minus(int lhs, int rhs) const;
+		int					div(int lhs, int rhs) const;
+		int					mult(int lhs, int rhs) const;
 	
 	//Exception
 	class	InputException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw();	
+	};
+	
+	class	DivByZeroException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw();	
+	};
+	class	ComputeException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw();	

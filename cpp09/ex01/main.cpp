@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:25:32 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/04 19:52:56 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/05 00:36:25 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,15 @@ int	main(int ac, char **av)
 		std::cout << "Error: " << "Usage: ./RPN [INPUT_LINE]" << std::endl;
 		return (1);
 	}
-	RPN	rpn(av[1]);
-	rpn.compute();
+	try
+	{
+		RPN	rpn(av[1]);
+		std::cout  << "Result : " << rpn.compute()  << std::endl;;	/* code */
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "Error : " << e.what() << '\n';
+	}
+
 	return (0);
 }
