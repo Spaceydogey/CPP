@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:25:35 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/05 01:11:33 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/05 01:28:27 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,8 +159,6 @@ RPN::const_iterator	RPN::push(RPN::const_iterator it, RPN::const_iterator end)
 	return (it);
 }
 
-
-	
 // Excetpion
 
 const char*	RPN::InputException::what() const throw()
