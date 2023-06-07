@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:46:25 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/06 19:39:39 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/07 17:01:20 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,24 +127,36 @@ T	insert(T &main, T &pend)
 {
 	std::vector<size_t>		toInsert;
 	size_t					size = pend.size();
-	size_t					i = -1;
+	size_t					i = 0;
 	size_t					jac = 1;
-	size_t					lastJac = 1;
+	size_t					lastJac = 0;
 	size_t					lastLastJac = 0;
 	
 	for (size_t j = 0; j < size; ++j)
 		toInsert.push_back(j + 1);
-	while (++i < size && jac <= size)
+	while (i < size && jac <= size)
 	{
 		// std::cout << "jac = " << jac << std::endl;
 		if (jac < lastJac) //overflow protection
 			throw OverflowException();
 		// std::cout << "pend[jac - 1] = " << pend[jac - 1] << std::endl;
 
-		main.insert(std::lower_bound(main.begin(), main.begin() + jac + i - 1, pend[jac - 1]), pend[jac - 1]);
+		// main.insert(std::lower_bound(main.begin(), main.begin() + jac + i - 1, pend[jac - 1]), pend[jac - 1]);
+		// lastLastJac = lastJac;
+		// lastJac = jac;
+		// toInsert.erase(toInsert.begin() + jac - 1 - i);
+		for (size_t j = jac; j > lastJac; --j)
+		{
+			main.insert(std::lower_bound(main.begin(), main.begin() + jac + i - 1, pend[j - 1]), pend[j - 1]);
+			// std::cout << "toInsert = ";
+			ft_print(toInsert);
+			// std::cout << "jac = " << j << std::endl;
+			// std::cout << "to erase = " << jac - 1 - i  << std::endl;
+			toInsert.erase(toInsert.begin() + jac - 1 - i);
+			i++;
+		}
 		lastLastJac = lastJac;
 		lastJac = jac;
-		toInsert.erase(toInsert.begin() + jac - 1 - i);
 		jac = lastJac + 2*lastLastJac;
 	}
 	// std::cout << "main after jac: ";

@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:08:43 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/07 00:43:04 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/07 16:28:12 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ int	main(int ac, char** av)
 	// v[7] = 1434;
 	
 	FJAVector(v);
-	ft_print(v);
+	// ft_print(v);
 
 }

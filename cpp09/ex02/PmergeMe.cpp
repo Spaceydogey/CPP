@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:46:59 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/07 00:51:20 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/07 16:27:59 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ std::vector<int> FJAVector(std::vector<int> v)
 		leftover = v[v.size() - 1];
 		v.pop_back();
 	}	 
-	ft_print(v);
+	// ft_print(v);
 	makePairs(v);
-	ft_print(v);
+	// ft_print(v);
 	orderPairs(v);
-	ft_print(v);
+	// ft_print(v);
 	pend = split(v, leftover);
 	std::cout << "main : ";
-	ft_print(v);
+	// ft_print(v);
 	std::cout << "pend : ";
-	ft_print(pend);
+	// ft_print(pend);
 	insert(v, pend);
 	ft_print(v);
 	return (v);
