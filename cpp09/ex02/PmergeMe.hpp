@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:46:25 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/07 17:01:20 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/07 20:05:54 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ class OverflowException : std::exception
 		virtual const char* what() const throw();	
 };
 
-std::vector<int> FJAVector(std::vector<int> v);
+std::vector<int> 	FJAVector(std::vector<int> v);
+std::deque<int> 	FJADeque(std::deque<int> d);
+int					parsing(int ac, char **av, std::vector<int> &v, std::deque<int> &d);
 
 template <typename T>
 void	ft_print(T &container)
@@ -36,6 +38,25 @@ void	ft_print(T &container)
         std::cout << container[i] << ", ";
     std::cout << container[container.size() - 1] << " ";
     std::cout << "};" << std::endl;
+}
+
+//split
+template <typename T>
+T	split(T &main, int leftover) 
+{
+	T						pend;
+	typename T::iterator	it = main.begin();
+	size_t					halfSize = main.size() / 2;
+	
+	while (main.size() > halfSize)
+	{
+		pend.push_back(*it);
+		it = main.erase(it);
+		it += 1;
+	}
+	if (leftover >= 0)
+		pend.push_back(leftover);
+	return (pend);
 }
 
 template <typename T>
@@ -51,6 +72,7 @@ T	&makePairs(T &container) //we assume that container size is even
 	}
 	return (container);
 }
+
 template <typename T>
 T	mergePairs(T &lhs, T &rhs) //we assume that container size is even
 {
@@ -101,27 +123,6 @@ T	&orderPairs(T &container) //we assume that container size is even
 	return (container);
 }
 
-//split
-template <typename T>
-T	split(T &main, int leftover) 
-{
-	T						pend;
-	// int						val;
-	typename T::iterator	it = main.begin();
-	size_t					halfSize = main.size() / 2;
-	
-	while (main.size() > halfSize)
-	{
-		// val = *it;
-		pend.push_back(*it);
-		main.erase(it);
-		it += 1;
-	}
-	if (leftover >= 0)
-		pend.push_back(leftover);
-	return (pend);
-}
-
 template <typename T>
 T	insert(T &main, T &pend)
 {
@@ -136,22 +137,13 @@ T	insert(T &main, T &pend)
 		toInsert.push_back(j + 1);
 	while (i < size && jac <= size)
 	{
-		// std::cout << "jac = " << jac << std::endl;
+		
 		if (jac < lastJac) //overflow protection
 			throw OverflowException();
-		// std::cout << "pend[jac - 1] = " << pend[jac - 1] << std::endl;
-
-		// main.insert(std::lower_bound(main.begin(), main.begin() + jac + i - 1, pend[jac - 1]), pend[jac - 1]);
-		// lastLastJac = lastJac;
-		// lastJac = jac;
-		// toInsert.erase(toInsert.begin() + jac - 1 - i);
+	
 		for (size_t j = jac; j > lastJac; --j)
 		{
 			main.insert(std::lower_bound(main.begin(), main.begin() + jac + i - 1, pend[j - 1]), pend[j - 1]);
-			// std::cout << "toInsert = ";
-			ft_print(toInsert);
-			// std::cout << "jac = " << j << std::endl;
-			// std::cout << "to erase = " << jac - 1 - i  << std::endl;
 			toInsert.erase(toInsert.begin() + jac - 1 - i);
 			i++;
 		}
@@ -159,18 +151,13 @@ T	insert(T &main, T &pend)
 		lastJac = jac;
 		jac = lastJac + 2*lastLastJac;
 	}
-	// std::cout << "main after jac: ";
-	// ft_print(main);
-	// std::cout << "toInsert = ";
-	// ft_print(toInsert);
-	// std::cout << "i = " << i << std::endl;
+	//add after jac
 	for(std::vector<size_t>::const_reverse_iterator it = toInsert.rbegin(); it !=  toInsert.rend(); it++)
 	{
-		std::cout << "pend[*it - 1] = " << pend[*it - 1] << std::endl;
-		std::cout << "it = " << *it << std::endl;
 		main.insert(std::lower_bound(main.begin(), main.begin() + *it + i - 1, pend[*it - 1]),  pend[*it - 1]);
 		i++;
 	}
+	
 	return (main);
 }
 
