@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 15:25:12 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/06 18:22:00 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/08 14:19:19 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void	BitCoinExchange::value(std::string fileName)
 double	BitCoinExchange::value(std::string date, float value) const
 {
 	//We assume that the date and value is correct
-	typename std::map<std::string, double>::const_iterator it = this->_data.lower_bound(date);
+	std::map<std::string, double>::const_iterator it = this->_data.lower_bound(date);
 	if (it->first != date)
 		it--;
 	return (it->second * value);

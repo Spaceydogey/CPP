@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:46:59 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/08 11:26:27 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/08 14:39:14 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,17 @@ std::deque<int> FJADeque(std::deque<int> d)
 	return (d);
 }
 
+bool isStringDigits(const std::string str) {
+    for (size_t i = 0; i < str.size(); ++i) 
+	{
+        if (!std::isdigit(str[i]))
+		{
+            return (false);
+		}
+	}
+	return (true);
+}
+
 int	parsing(int ac, char **av, std::vector<int> &v, std::deque<int> &d)
 {
 	for (int i = 1; i < ac; ++i)
@@ -58,6 +69,11 @@ int	parsing(int ac, char **av, std::vector<int> &v, std::deque<int> &d)
 		int					toInsert;
 		std::stringstream	sVal(av[i]);
 		
+		if (!isStringDigits(av[i]))
+		{
+			std::cout << "Error : Bad Input" << std::endl;
+			return (1);
+		}
 		sVal >> toInsert;
 		if (sVal.fail() || toInsert < 0)
 		{

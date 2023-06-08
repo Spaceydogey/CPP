@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:26:47 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/04 16:31:08 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/08 14:20:23 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	main(int ac, char **av)
 		{
 			std::cerr << "Error : " << e.what() << std::endl;
 		}
-		std::cout << std::endl;
 	}
 	catch(const std::exception& e)
 	{

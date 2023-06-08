@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:25:35 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/05 01:28:27 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/08 14:33:10 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ RPN & RPN::operator=(const RPN &assign)
 }
 
 // Private Functions
-
 void	RPN::parsing(std::string input)
 {
 	const_iterator 	it;

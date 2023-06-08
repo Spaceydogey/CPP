@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:08:43 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/08 14:04:35 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/08 14:41:28 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,10 @@ int	main(int ac, char** av)
 	struct timeval		dBegin, dEnd;
 	double				delapsed;
 	
-	std::cout << "\033[33mStarting parsing\033[0m" << std::endl;
+
 	if (parsing(ac, av, v, d))
 		return (1);
-	std::cout << "\033[31mParsing done\033[0m" << std::endl;
-	
-	std::cout << std::endl;
-	
+
 
 	// Sort deque
 	gettimeofday(&dBegin, 0);

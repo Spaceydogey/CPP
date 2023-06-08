@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:25:33 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/05 00:35:24 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/08 14:22:22 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class RPN
 {
 	public:
 		// Type
-		typedef typename std::string::const_iterator const_iterator;
+		typedef std::string::const_iterator const_iterator;
 		// Constructors
 		RPN();
 		RPN(std::string input);
