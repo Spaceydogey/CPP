@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:46:59 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/07 20:05:50 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/08 11:26:27 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,4 @@ int	parsing(int ac, char **av, std::vector<int> &v, std::deque<int> &d)
 	}
 	return (0);
 }
+

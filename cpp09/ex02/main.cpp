@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:08:43 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/07 22:54:15 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/08 14:04:35 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,13 @@
 # include <deque>
 
 #include <stdio.h>
-#include <time.h>
 #include <sys/time.h>
 
 double elapsed(struct timeval	begin, struct timeval	end)
 {
 	long seconds = end.tv_sec - begin.tv_sec;
-    // long nanoseconds = end.tv_nsec - begin.tv_nsec;
 	long microseconds = end.tv_usec - begin.tv_usec;
-    // double elapsed = seconds*1e9 + nanoseconds;
-    double elapsed = seconds + microseconds*1e-6;
+    double elapsed = seconds*1e6 + microseconds;
 	return (elapsed);
 }
 int	main(int ac, char** av)
@@ -54,37 +51,31 @@ int	main(int ac, char** av)
 	
 	std::cout << std::endl;
 	
-	std::cout << "\033[36mdeque : \033[0m" << std::endl;
 
-	// Sort
-	// clock_gettime(CLOCK_REALTIME, &dBegin);
+	// Sort deque
 	gettimeofday(&dBegin, 0);
 	dSorted = FJADeque(d);
-	// clock_gettime(CLOCK_REALTIME, &dEnd);
 	gettimeofday(&dEnd, 0);
 	delapsed  = elapsed(dBegin, dEnd);
 
-	std::cout << "Before : ";
-	ft_print(d);
-	std::cout << "After : ";
-	ft_print(dSorted);
-	std::cout << "Time elapsed : " << delapsed << " s" << std::endl;
-	
-	std::cout  << std::endl;
-	
-	std::cout << "\033[36mvector : \033[0m" << std::endl;
-	
-	// Sort
-	// clock_gettime(CLOCK_REALTIME, &vBegin);
+	// Sort vector
 	gettimeofday(&vBegin, 0);
 	vSorted = FJAVector(v);
 	gettimeofday(&vEnd, 0);
-	// clock_gettime(CLOCK_REALTIME, &vEnd);
 	velapsed  = elapsed(vBegin, vEnd);
-	
+	// Print
 	std::cout << "Before : ";
-	ft_print(v);
-	std::cout << "After : ";
+	ft_print(d);
+	std::cout << "After std::vector : ";
 	ft_print(vSorted);
-	std::cout << "Time elapsed : " << velapsed << " s" << std::endl;
+	std::cout << "After std::deque : ";
+	ft_print(dSorted);
+
+	std::cout << "Time elapsed for std::deque : " << delapsed << " us" << std::endl;
+	std::cout << "Time elapsed for std::vector : " << velapsed << " us" << std::endl;
+	std::cout << "Size before : " << d.size() << std::endl;
+	std::cout << "Size std::vector : " << vSorted.size() << std::endl;
+	std::cout << "Size std::deque : " << dSorted.size() << std::endl;
+	std::cout << "Is std::vector sorted : " << std::is_sorted(vSorted.begin(), vSorted.end()) << std::endl;
+	std::cout << "Is std::deque sorted : " << std::is_sorted(dSorted.begin(), dSorted.end()) << std::endl;
 }

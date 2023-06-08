@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:46:25 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/07 20:05:54 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/08 13:41:14 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ T	mergePairs(T &lhs, T &rhs) //we assume that container size is even
 	{
 		max_lhs = std::max_element(lhs.begin(), lhs.end());
 		max_rhs = std::max_element(rhs.begin(), rhs.end());
-		if (rhs.empty() || (*max_lhs > *max_rhs && !lhs.empty() ))
+		if (rhs.empty() || (!lhs.empty() && *max_lhs > *max_rhs))
 		{
 			res.insert(res.begin(), max_lhs - 1, max_lhs + 1);
 			lhs.erase(max_lhs - 1, max_lhs + 1);	
