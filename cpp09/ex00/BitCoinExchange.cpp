@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 15:25:12 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/08 14:19:19 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/09 12:16:54 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,8 @@ void	BitCoinExchange::value(std::string fileName)
 							this->print();
 						else if (value > 1000.f || value < 0.f)
 							this->print(value);
+						else if (date < this->_data.begin()->first)
+							this->print(date);
 						else
 							this->print(date, value);
 					}
