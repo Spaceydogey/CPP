@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:08:43 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/08 14:41:28 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/09 15:01:12 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,21 @@ int	main(int ac, char** av)
 	
 	std::vector<int>	v;
 	std::vector<int>	vSorted;
-	// struct timespec		vBegin, vEnd;
 	struct timeval		vBegin, vEnd;
 	double				velapsed;
 	std::deque<int>		d;
 	std::deque<int>		dSorted;
-	// struct timespec		dBegin, dEnd;
 	struct timeval		dBegin, dEnd;
 	double				delapsed;
 	
+	struct timeval		pBegin, pEnd;
+	double				pelapsed;
 
+	gettimeofday(&pBegin, 0);
 	if (parsing(ac, av, v, d))
 		return (1);
-
+	gettimeofday(&pEnd, 0);
+	pelapsed  = elapsed(pBegin, pEnd);
 
 	// Sort deque
 	gettimeofday(&dBegin, 0);
@@ -68,6 +70,7 @@ int	main(int ac, char** av)
 	std::cout << "After std::deque : ";
 	ft_print(dSorted);
 
+	std::cout << "Time elapsed for the parsing : " << pelapsed << " us" << std::endl;
 	std::cout << "Time elapsed for std::deque : " << delapsed << " us" << std::endl;
 	std::cout << "Time elapsed for std::vector : " << velapsed << " us" << std::endl;
 	std::cout << "Size before : " << d.size() << std::endl;

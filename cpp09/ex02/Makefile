@@ -6,7 +6,7 @@ OBJ = $(SRCS:.cpp=.o)
 
 CFLAGS = -Wall -Wextra -Werror $(CPPFLAGS) $(FFLAGS) -g
 CPPFLAGS = -std=c++98
-FFLAGS = #-fsanitize=address
+FFLAGS = -fsanitize=address
 
 CC = c++
 

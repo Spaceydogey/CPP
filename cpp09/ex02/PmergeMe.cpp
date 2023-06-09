@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:46:59 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/08 14:39:14 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/09 14:54:13 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,11 @@ int	parsing(int ac, char **av, std::vector<int> &v, std::deque<int> &d)
 			std::cout << "Error : Bad Input" << std::endl;
 			return (1);
 		}
-		if (std::find(v.begin(), v.end(), toInsert) != v.end())	
-		{
-			std::cout << "Error : Duplicate Number" << std::endl;
-			return (1);
-		}
+		// if (std::find(v.begin(), v.end(), toInsert) != v.end())	
+		// {
+		// 	std::cout << "Error : Duplicate Number" << std::endl;
+		// 	return (1);
+		// }
 		v.push_back(toInsert);
 		d.push_back(toInsert);
 	}
