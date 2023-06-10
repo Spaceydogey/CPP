@@ -6,16 +6,17 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:08:43 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/09 15:01:12 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/10 12:57:31 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-# include <vector>
-# include <deque>
+#include <vector>
+#include <deque>
 
 #include <stdio.h>
 #include <sys/time.h>
+
 
 double elapsed(struct timeval	begin, struct timeval	end)
 {
@@ -76,6 +77,6 @@ int	main(int ac, char** av)
 	std::cout << "Size before : " << d.size() << std::endl;
 	std::cout << "Size std::vector : " << vSorted.size() << std::endl;
 	std::cout << "Size std::deque : " << dSorted.size() << std::endl;
-	std::cout << "Is std::vector sorted : " << std::is_sorted(vSorted.begin(), vSorted.end()) << std::endl;
-	std::cout << "Is std::deque sorted : " << std::is_sorted(dSorted.begin(), dSorted.end()) << std::endl;
+	std::cout << "Is std::vector sorted : " << isSorted(vSorted.begin(), vSorted.end()) << std::endl;
+	std::cout << "Is std::deque sorted : " << isSorted(dSorted.begin(), dSorted.end()) << std::endl;
 }

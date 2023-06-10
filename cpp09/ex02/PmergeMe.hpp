@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 15:46:25 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/09 15:07:37 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/10 13:08:00 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,6 +163,20 @@ T	insert(T &main, T &pend)
 	}
 	
 	return (main);
+}
+
+template <typename ForwardIterator>
+bool isSorted(ForwardIterator begin, ForwardIterator end) {
+    if (begin == end)
+        return true;
+
+    ForwardIterator next = begin;
+    while (++next != end) {
+        if (*next < *begin)
+            return false;
+        ++begin;
+    }
+    return true;
 }
 
 #endif
