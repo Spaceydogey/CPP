@@ -133,7 +133,7 @@ double	BitCoinExchange::value(std::string date, float value) const
 {
 	//We assume that the date and value is correct
 	std::map<std::string, double>::const_iterator it = this->_data.lower_bound(date);
-	if (it->first != date)
+	if (it == this->_data.end() || it->first != date)
 		it--;
 	return (it->second * value);
 }
