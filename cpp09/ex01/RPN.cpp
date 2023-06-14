@@ -6,7 +6,7 @@
 /*   By: hdelmas <hdelmas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 16:25:35 by hdelmas           #+#    #+#             */
-/*   Updated: 2023/06/08 14:33:10 by hdelmas          ###   ########.fr       */
+/*   Updated: 2023/06/14 13:24:41 by hdelmas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	RPN::parsing(std::string input)
 {
 	const_iterator 	it;
 	int				count = 0;
+	int				isSpace = 1;
 	int				tokenCount = 0;
 
 	it = input.begin();
@@ -65,6 +66,7 @@ void	RPN::parsing(std::string input)
 			++it;
 		if (it != input.end() && (isToken(*it)))
 		{
+			isSpace = 0;
 			while (it != input.end() && (isToken(*it)))
 			{
 				it = this->push(it, input.end());
@@ -78,11 +80,14 @@ void	RPN::parsing(std::string input)
 		}
 		else if (it != input.end())
 		{
+			isSpace = 0;
 			it = this->push(it, input.end());
 			++count;
 			++it;
 		}
 	}
+	if (tokenCount != count - 1 || isSpace)
+		throw InputException();
 }
 
 int					RPN::op(int token, int lhs, int rhs) const
